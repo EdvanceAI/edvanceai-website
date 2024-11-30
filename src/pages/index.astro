@@ -27,7 +27,7 @@ const metadata = {
   <Hero2
     tagline="Student-Led Non-profit"
     actions={[
-      { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/onwidget/astrowind' },
+    { variant: 'primary', text: 'Get Started', href: '/contact' },
       { text: 'Learn more', href: '#features' },
     ]}
     image={{
@@ -40,40 +40,40 @@ const metadata = {
   </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        We're a student-led non-profit <strong> empowering students </strong> to build no-cost AI-enabled websites, chatbots, and tools for non-profits and small businesses. 
+        We're a student-led non-profit <span class="text-[#6ca1cd]"><strong> empowering students </strong></span> to build no-cost AI-enabled websites, chatbots, and tools for non-profits and small businesses. 
     </Fragment>
   </Hero2>
 
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="Who we are"
+    subtitle="We're a group of passionate high school students with experience developing AI tools for startups and research labs. We're excited to help you start your digital journey and serve more people with the following technologies:"
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
+        title: 'AI-Enabled Websites',
         description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+          'Expand your reach, engage your audience, and build credibility by showcasing your mission, services, and achievements to billions of people.',
+        icon: 'tabler:code',
       },
       {
-        title: 'Interior Design',
+        title: 'AI Chatbots',
         description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+          'Enhance customer engagement, provide instant support, and streamline operations by answering queries and automating routine interactions.',
+        icon: 'tabler:robot',
       },
       {
-        title: 'Photography',
+        title: 'Search Engine Optimization (SEO)',
         description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+          "Increase your website's visibility, attract more traffic, and reach target audiences by optimizing websites for search engines like Google.",
+        icon: 'tabler:browser',
       },
     ]}
   />
   
     <!-- Steps Widget ****************** -->
   <Steps
-    title="How it works"
+    title="How we'll help you"
     items={[
       {
         title: '1. <span class="font-medium">Connect with you</span>',
@@ -130,7 +130,7 @@ const metadata = {
     ]}
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-blue-100 dark:bg-transparent"></div>
     </Fragment>
   </FAQs>
 
@@ -138,38 +138,30 @@ const metadata = {
 
   <Steps2
     title="Reach out to us"
-    subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
+    subtitle="Start your digital journey with a free AI-enabled website or chatbot!"
     callToAction={{
       text: 'Contact us',
-      href: '/',
+      href: '/contact',
     }}
     items={[
       {
-        title: 'Email us',
-        description: 'contact@support.com',
+        title: 'Email',
+        description: 'team@edvanceai.org',
         icon: 'tabler:mail',
       },
       {
-        title: 'Call us',
-        description: '+1 (234) 567-890',
+        title: 'Call',
+        description: '+1 (240) 425-9549',
         icon: 'tabler:headset',
       },
       {
-        title: 'Follow us',
-        description: '@example',
-        icon: 'tabler:brand-twitter',
+        title: 'Follow',
+        description: '@edvanceai',
+        icon: 'tabler:brand-instagram',
       },
     ]}
   />
 
-  <!-- BlogLatestPost Widget **************** -->
-
-  <BlogLatestPosts
-    id="blog"
-    title="Past Projects"
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
 </Layout>
+
+

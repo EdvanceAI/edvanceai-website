@@ -86,5 +86,9 @@ export default defineConfig({
         '~': path.resolve(__dirname, './src'),
       },
     },
-  },
+    define: {
+      'process.env.EMAIL_USER': JSON.stringify(process.env.EMAIL_USER),
+      'process.env.EMAIL_PASS': JSON.stringify(process.env.EMAIL_PASS)
+    }
+  }
 });
