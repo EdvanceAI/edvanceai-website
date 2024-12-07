@@ -14,18 +14,18 @@ const founders = [
   {
     name: "Parim Shah",
     title: "CEO & Co-Founder",
-    src: ''~/src/assets/images/parim.jpeg', // Replace with actual image path
+    image: ''~/src/assets/images/parim.jpeg', // Replace with actual image path
   },
   {
     name: "Rishi Narang",
     title: "CTO & Co-Founder", 
-    src: ''~/assets/images/Rishi.png', // Replace with actual image path
+    image: ''~/assets/images/Rishi.png', // Replace with actual image path
     
   },
   {
     name: "Quinley Borden",
     title: "COO & Co-Founder",
-    src: ''~/assets/images/quinley.png', // Replace with actual image path
+    image: ''~/assets/images/quinley.png', // Replace with actual image path
   }
 ];
 ---
@@ -53,8 +53,8 @@ const founders = [
             <div class="aspect-square w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
               {founder.image ? (
                 <img 
-                  src={founder.src} 
-                  alt={founder.src} 
+                  src={founder.image} 
+                  alt={founder.image} 
                   class="w-full h-full object-cover"
                 />
               ) : (
