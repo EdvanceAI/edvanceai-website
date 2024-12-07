@@ -17,11 +17,9 @@ export default {
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
-
       animation: {
         fade: 'fadeInUp 1s both',
       },
-
       keyframes: {
         fadeInUp: {
           '0%': { opacity: 0, transform: 'translateY(2rem)' },
@@ -36,5 +34,5 @@ export default {
       addVariant('intersect', '&:not([no-intersect])');
     }),
   ],
-  darkMode: 'class',
+  // Remove the darkMode line
 };
