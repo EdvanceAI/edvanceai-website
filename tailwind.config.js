@@ -10,6 +10,7 @@ export default {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
+        default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
       },
       fontFamily: {
@@ -17,9 +18,11 @@ export default {
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
+
       animation: {
         fade: 'fadeInUp 1s both',
       },
+
       keyframes: {
         fadeInUp: {
           '0%': { opacity: 0, transform: 'translateY(2rem)' },
@@ -34,5 +37,5 @@ export default {
       addVariant('intersect', '&:not([no-intersect])');
     }),
   ],
-  // Remove the darkMode line
+  darkMode: 'class',
 };
