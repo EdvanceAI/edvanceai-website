@@ -5,8 +5,8 @@
 :root {
   --aw-color-text-page: #000000; /* Text Color */
   --aw-color-text-muted: #6b7280; /* Muted Text Color */
-  --aw-text-primary: #6ca1cd; /* Primary Button Background */
-  --aw-text-secondary: #557fa2; /* Secondary Button Hover */
+  --aw-color-primary: #6ca1cd; /* Primary Button Background */
+  --aw-color-secondary: #557fa2; /* Secondary Button Hover */
 }
 
 
