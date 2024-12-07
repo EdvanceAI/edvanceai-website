@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:global {
   --aw-color-text-page: #000000; /* Text Color */
   --aw-color-text-muted: #6b7280; /* Muted Text Color */
   --aw-color-primary: #6ca1cd; /* Primary Button Background */
