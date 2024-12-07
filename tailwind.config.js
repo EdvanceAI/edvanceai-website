@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--aw-color-primary)',
-        secondary: 'var(--aw-color-secondary)',
+        primary: '#6ca1cd',
+        secondary: '#557fa2',
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
-        muted: 'var(--aw-color-text-muted)',
+        muted: '#6b7280',
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
