@@ -124,10 +124,10 @@ export const headerData = {
 export const footerData = {
   
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: 'https://github.com/onwidget/astrowind' },
-    { ariaLabel: 'Linktree', icon: 'tabler:brand-linktree', href: 'https://github.com/onwidget/astrowind' },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/edvanceai/' },
+    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: 'https://discord.gg/hgJHPBUJTf' },
+    { ariaLabel: 'Linktree', icon: 'tabler:brand-linktree', href: 'https://linktr.ee/edvance.ai' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/EdvanceAI' },
   ],
   footNote: `
     © 2024 Edvance AI. All Rights Reserved.

@@ -1,220 +1,216 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-import Header from '~/components/widgets/Header.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Content from '~/components/widgets/Content.astro';
-import Pricing from '~/components/widgets/Pricing.astro';
-
-import { headerData } from '~/navigation';
-import FAQs from '~/components/widgets/FAQs.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
-  title: 'Edvance AI',
+  title: 'Edvance AI | Student-Led AI Solutions',
   ignoreTitleTemplate: true,
 };
+
+const services = [
+  {
+    title: 'AI-Powered Websites',
+    description: 'Custom-built websites with intelligent features that help you connect with your audience and automate core business processes.',
+    icon: 'tabler:code',
+    highlight: 'Free Hosting'
+  },
+  {
+    title: 'Intelligent Chatbots',
+    description: 'Smart conversational agents that understand context, answer questions, and handle customer support 24/7.',
+    icon: 'tabler:robot',
+    highlight: 'Custom-Trained'
+  },
+  {
+    title: 'SEO Optimization',
+    description: 'Data-driven strategies to improve your visibility on search engines and connect with people who need your services.',
+    icon: 'tabler:chart-arrows',
+    highlight: 'Results-Focused'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Discovery',
+    timeframe: '1-2 weeks',
+    description: 'We work closely with you to understand your mission, goals, and specific needs for your digital presence.'
+  },
+  {
+    step: '02',
+    title: 'Development',
+    timeframe: '3-4 weeks',
+    description: 'Our team builds your custom solution, incorporating AI features while maintaining a focus on usability and impact.'
+  },
+  {
+    step: '03',
+    title: 'Launch',
+    timeframe: '1-2 weeks',
+    description: 'We deploy your solution, ensure everything runs smoothly, and optimize for maximum reach and engagement.'
+  }
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ****************** -->
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-900 dark:from-gray-950 to-transparent z-10"></div>
+    <div class="absolute inset-0">
+      <Image
+        src="/images/hero-image.jpeg"
+        alt="Students working on AI projects"
+        width={1920}
+        height={1080}
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="container mx-auto px-6 relative z-20">
+      <div class="max-w-3xl">
+        <p class="text-primary font-medium mt-4 mb-4">Student-Led Non-profit Organization</p>
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+          Empowering Organizations with <span class="text-primary">Free</span> AI Solutions
+        </h1>
+        <p class="text-xl text-gray-200 mb-8">
+          We're passionate high school students building no-cost AI-enabled tools for non-profits 
+          and small businesses. Let's amplify your impact together.
+        </p>
+        <div class="flex gap-4 mb-8">
+          <a href="/contact" class="px-8 py-4 bg-primary hover:bg-secondary text-white rounded-lg font-medium transition-colors">
+            Get Started
+          </a>
+          <a href="#services" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-lg font-medium backdrop-blur-sm transition-colors">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <Hero2
-    tagline="Student-Led Non-profit"
-    actions={[
-    { variant: 'primary', text: 'Get Started', href: '/contact' },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{
-      src: '~/assets/images/hero-image.jpeg',
-      alt: 'AstroWind Hero Image',
-    }}
-  >
-  <Fragment slot="title">
-    Building <span class="text-[#6ca1cd]">free</span> AI solutions for your organization
-  </Fragment>
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        We're a student-led non-profit <span class="text-[#6ca1cd]"><strong> empowering students </strong></span> to build no-cost AI-enabled websites, chatbots, and tools for non-profits and small businesses. 
-    </Fragment>
-  </Hero2>
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-4xl font-bold mb-6 dark:text-white">Our Services</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          We combine cutting-edge AI technology with thoughtful design to create solutions 
+          that make a real difference for your organization.
+        </p>
+      </div>
+     <div class="grid md:grid-cols-3 gap-8">
+        {services.map(service => (
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+              <Icon name={service.icon} class="w-6 h-6 text-primary" />
+            </div>
+            <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full mb-4">
+              {service.highlight}
+            </span>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">{service.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <Features3
-    title="Who we are"
-    subtitle="We're a group of passionate high school students with experience developing AI tools for startups and research labs. We're excited to help you start your digital journey and serve more people with the following technologies:"
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'AI-Enabled Websites',
-        description:
-          'Expand your reach, engage your audience, and build credibility by showcasing your mission, services, and achievements to billions of people.',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'AI Chatbots',
-        description:
-          'Enhance customer engagement, provide instant support, and streamline operations by answering queries and automating routine interactions.',
-        icon: 'tabler:robot',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "Increase your website's visibility, attract more traffic, and reach target audiences by optimizing websites for search engines like Google.",
-        icon: 'tabler:browser',
-      },
-    ]}
-  />
-  
-    <!-- Steps Widget ****************** -->
-  <Steps
-    title="How we'll help you"
-    items={[
-      {
-        title: '1. <span class="font-medium">Connect with you</span>',
-        description:
-          "<strong>1-2 weeks: </strong>After reaching out, we'll collaboratively identify the features, design, and information you would like to include in dream AI-enabled website.",
-        icon: 'tabler:mail',
-      },
-      {
-        title: '2. <span class="font-medium">Build and design</span>',
-        description:
-          "<strong>3-4 weeks: </strong>Our team of skilled engineers and designers will build your AI-enabled website in accordance with your vision. We will periodically update you on our progress. ",
-        icon: 'tabler:hammer',
-      },
-      {
-        title: '3. <span class="font-medium">Launch to the world</span>',
-        description:
-          "<strong>1-2 weeks: </strong> After your approval, we'll launch your site to the public. Our team will ensure it's highly-ranked in Google Search so that you can reach more people.",
-        icon: 'tabler:world',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-  />
+  <!-- Process Section -->
+  <section class="py-24 dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-4xl font-bold mb-6 dark:text-white">How We Work</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+          Our streamlined process ensures we deliver high-quality solutions efficiently 
+          while keeping you involved every step of the way.
+        </p>
+      </div>
+      <div class="max-w-2xl mx-auto">
+        {process.map((phase, index) => (
+          <div class="relative mb-16 last:mb-0">
+            <div class="flex items-start gap-8">
+              <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-xl font-bold">
+                {phase.step}
+              </div>
+              <div class="flex-grow">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-sm">
+                  <h3 class="text-xl font-bold mb-2 dark:text-white">{phase.title}</h3>
+                  <p class="text-primary font-medium mb-4">{phase.timeframe}</p>
+                  <p class="text-gray-600 dark:text-gray-300">{phase.description}</p>
+                </div>
+                {index !== process.length - 1 && (
+                  <div class="absolute left-8 top-16 w-0.5 h-16 bg-primary/20"></div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <!-- FAQs Widget
-
-  <FAQs
-    title="Frequently Asked Questions"
-    items={[
-      {
-        title: 'Is AstroWind compatible with the latest versions of Astro and Tailwind CSS?',
-        description:
-          'Yes, AstroWind is designed to be compatible with the latest versions of both Astro and Tailwind CSS. This ensures that you can harness the full capabilities of these technologies while benefiting from the features offered by AstroWind.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Can I use AstroWind for both personal and commercial projects?',
-        description: `Certainly! AstroWind is versatile and can be used for a wide range of projects, including both personal and commercial endeavors. Whether you're building a professional portfolio, launching a startup, or creating a marketing website, AstroWind has you covered.`,
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'What level of coding knowledge is required to use AstroWind?',
-        description:
-          'While some familiarity with HTML, CSS, and web development concepts is helpful, the user-friendly interface and customization options allow those with limited coding experience to create impressive websites. For more advanced users, AstroWind offers extensive customization capabilities.',
-        icon: 'tabler:chevrons-right',
-      },
-      {
-        title: 'Is customer support available for AstroWind users seeking guidance?',
-        description: `Absolutely, our dedicated customer support team is here to assist you with any questions or challenges you may encounter. Feel free to reach out to us through our support channels, and we'll be happy to provide the help you need.`,
-        icon: 'tabler:chevrons-right',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-100 dark:bg-transparent"></div>
-    </Fragment>
-  </FAQs>
-   ******************* -->
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Reach out to us"
-    subtitle="Start your digital journey with a free AI-enabled website or chatbot!"
-    callToAction={{
-      text: 'Contact us',
-      href: '/contact',
-    }}
-    items={[
-      {
-        title: 'Email',
-        description: 'team@edvanceai.org',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Call',
-        description: '+1 (240) 425-9549',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Follow',
-        description: '@edvanceai',
-        icon: 'tabler:brand-instagram',
-      },
-    ]}
-  />
-
+  <!-- Contact Section -->
+  <section class="py-24 bg-gray-900 dark:bg-gray-950 text-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Let's discuss how we can help digitize and amplify your organization's impact.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 bg-primary hover:bg-secondary text-white rounded-lg font-medium transition-colors">
+          Contact Us
+        </a>
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+          <div class="bg-white/5 hover:bg-white/10 p-6 rounded-lg backdrop-blur-sm transition-colors">
+            <i class="tabler:mail w-8 h-8 text-primary mb-4"></i>
+            <h3 class="text-lg font-medium mb-2">Email</h3>
+            <p class="text-gray-300">team@edvanceai.org</p>
+          </div>
+          <div class="bg-white/5 hover:bg-white/10 p-6 rounded-lg backdrop-blur-sm transition-colors">
+            <i class="tabler:headset w-8 h-8 text-primary mb-4"></i>
+            <h3 class="text-lg font-medium mb-2">Phone Number</h3>
+            <p class="text-gray-300">+1 (240) 425-9549</p>
+          </div>
+          <div class="bg-white/5 hover:bg-white/10 p-6 rounded-lg backdrop-blur-sm transition-colors">
+            <i class="tabler:brand-instagram w-8 h-8 text-primary mb-4"></i>
+            <h3 class="text-lg font-medium mb-2">Social Media</h3>
+            <p class="text-gray-300">@edvanceai</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
-<script>
-import defaultTheme from 'tailwindcss/defaultTheme';
-import plugin from 'tailwindcss/plugin';
-import typographyPlugin from '@tailwindcss/typography';
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-export default {
-  content: ['./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}'],
-  theme: {
-    extend: {
-      colors: {
-        primary: 'var(--aw-color-primary)',
-        secondary: 'var(--aw-color-secondary)',
-        accent: 'var(--aw-color-accent)',
-        default: 'var(--aw-color-text-default)',
-        muted: 'var(--aw-color-text-muted)',
-      },
-      fontFamily: {
-        sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
-      },
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
 
-      animation: {
-        fade: 'fadeInUp 1s both',
-      },
-
-      keyframes: {
-        fadeInUp: {
-          '0%': { opacity: 0, transform: 'translateY(2rem)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
-        },
-      },
-    },
-  },
-  plugins: [
-    typographyPlugin,
-    plugin(({ addVariant }) => {
-      addVariant('intersect', '&:not([no-intersect])');
-    }),
-  ],
-  darkMode: 'class',
-};
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
 
 <script>
-window.addEventListener('load', () => {
-  document.documentElement.style.setProperty('--aw-color-text-page', '#000000');
-  document.documentElement.style.setProperty('--aw-color-text-muted', '#6b7280');
-  document.documentElement.style.setProperty('--aw-color-primary', '#6ca1cd');
-  document.documentElement.style.setProperty('--aw-color-secondary', '#557fa2');
-});
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fadeInUp');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('section > div').forEach((el) => observer.observe(el));
 </script>
-
-
