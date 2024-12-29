@@ -17,14 +17,19 @@ const { metadata } = Astro.props;
 ---
 <Layout metadata={metadata}>
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y575FKT4FC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-Y575FKT4FC');
-  </script>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y575FKT4FC"></script>
+    <script>
+      if (typeof window !== 'undefined') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          window.dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-Y575FKT4FC');
+      }
+    </script>
+  </head>
 
   <slot name="announcement">
     <Announcement />
