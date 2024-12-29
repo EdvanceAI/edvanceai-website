@@ -1,5 +1,5 @@
 ---
-import Analytics from '@vercel/analytics/astro'
+import Analytics from '@vercel/analytics/astro';
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
@@ -15,8 +15,17 @@ export interface Props {
 
 const { metadata } = Astro.props;
 ---
-
 <Layout metadata={metadata}>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y575FKT4FC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y575FKT4FC');
+  </script>
+
   <slot name="announcement">
     <Announcement />
   </slot>
